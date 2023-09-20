@@ -3,7 +3,7 @@ import { connectDB } from "@/util/database";
 export default async function Characontent() {
 
   let db = (await connectDB).db('project1');
-  let result = await db.collection('chara-data').find().toArray();
+  let result = await db.collection('chara-info').find().toArray();
   // console.log(result);
 
   return (

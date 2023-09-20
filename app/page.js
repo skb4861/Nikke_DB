@@ -1,6 +1,7 @@
+import { do_hyeon } from "./font"
 import Characontent from "./CharaContent";
 import Btnfilter from "./BtnFilter";
-import { do_hyeon } from "./font"
+import SearchBar from "./SearchBar";
 
 export default async function Home() {
 	return (
@@ -9,6 +10,7 @@ export default async function Home() {
 				<div className="row">
 					<div className="col">
 						<Btnfilter></Btnfilter>
+						<SearchBar></SearchBar>
 						<Characontent></Characontent>
 					</div>
 				</div>
