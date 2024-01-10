@@ -1,0 +1,147 @@
+.chara_table {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+    .chara_thead {
+      background-color: #404142;
+      color: #f6fafd;
+      padding: 20px 60px;
+      // border-bottom: 1px solid #9c9494;
+      th {
+        padding: 7px 0;
+      }
+      .rarity {
+        width: 60px;
+      }
+      .code {
+        padding-right: 30px;
+      }
+      .thum {
+        width: 220px;
+      }
+      .info_name {
+        width: 130px;
+        text-align: left;
+      }
+      .score {
+        width: 118px;
+      }
+      .squad {
+        width: 134px;
+      }
+    }
+    tbody {
+      position: relative;
+      transition: 0.3s;
+      border-bottom: 1px solid #f1f1f1;
+      line-height: 0px;
+      cursor: pointer;
+      .chara_list_hovered {
+        td {
+          color: white;
+          .image_container {
+            &::before {
+              left: 0;
+            }
+          }
+          .icon {
+            filter: invert(0%);
+          }
+        }
+      }
+      tr {
+        .info_rarity {
+          z-index: 1;
+          scale: .7;
+        }
+        .info_code {
+          padding-right: 30px;
+          width: 90px;
+        }
+        .info_name {
+          width: 180px;
+          text-align: left;
+        }
+        .info_data {
+          width: 100px;
+        }
+        td {
+          font-size: 17px;
+          padding: 0;
+          position: relative;
+          transition: .3s;
+          border-bottom: 1px solid #f1f1f1;
+          .data_container {
+            position: relative;
+            z-index: 2; 
+          }
+          .image_container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 130%;
+            height: 100%;
+            &::before {
+              content: "";
+              position: absolute;
+              background-color: #f9b536;
+              top: 0;
+              left: -1212px;
+              width: 1212px;
+              height: 128px;
+              transition: left 0.3s ease-in-out;
+            }
+            .chara_img {
+              position: absolute;
+              z-index: 2;
+              top: -40px;
+              left: -30px;
+              scale: .65;
+            }
+            .faction {
+              position: absolute;
+              z-index: 1;
+              top: 30px;
+              left: -10px;
+              scale: .9;
+              filter: invert(5%)
+            } 
+          }
+          .image_container:not(.faction_hidden) {
+            overflow: hidden;
+          }
+          .icon_class {
+            scale: .30;
+            filter: invert(100%);
+            transition: .4s;
+          }
+          .icon_faction {
+            scale: .7;
+            filter: invert(100%);
+            transition: .4s;
+          }
+          .icon_rarity {
+            scale: .55;
+          }
+          .icon_bust {
+            scale: .35;
+            transition: .4s;
+            filter: invert(100%);
+          }
+          .icon_code {
+            scale: .40;
+          }
+          .icon_weapon {
+            scale: .55;
+            filter: invert(100%);
+            transition: .4s;
+          }
+        }
+      }
+    }
+  }

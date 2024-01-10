@@ -1,0 +1,141 @@
+.btn1 {
+	position: relative;
+	width: 60px;
+	height: 40px;
+	margin: 5px 0;
+	cursor: pointer;
+	background-color: white;
+	color: black;
+	border: none;
+	transition: .3s;
+	.rarity {
+		position: absolute;
+		scale: .25;
+		top: -44px;
+		left: -35px;
+	}
+	.code {
+		position: absolute;
+		scale: .35;
+		top: -30px;
+		left: -20px;
+	}
+	.faction {
+		position: absolute;
+		scale: .55;
+		top: 0;
+		left: 10px;
+		filter: invert(100%);
+	}
+	.pilgrim {
+		top: -3px;
+	}
+	.class {
+		position: absolute;
+		scale: .25;
+		top: -31px;
+		left: -17px;
+		filter: invert(100%);
+	}
+	.defender {
+		left: -11px;
+	}
+	.supporter {
+		left: -22px;
+	}
+	.bust {
+		position: absolute;
+		scale: .3;
+		top: -31px;
+		left: -15px;
+		filter: invert(100%);
+	}
+	.weapon {
+		position: absolute;
+		scale: .5;
+		top: 0;
+		left: -5px;
+		filter: invert(100%);
+	}
+	.smg {
+		scale: .4;
+		top: -7px;
+		left: -8px;
+	}
+	.sg {
+		scale: .55;
+		top: 10px;
+		left: -12px;
+	}
+	.sr {
+		scale: .55;
+		top: 3px;
+		left: -9px;
+	}
+	.rl {
+		scale: .5;
+		top: 3px;
+	}
+	.mg {
+		scale: .45;
+		top: 1px;
+		left: -12px;
+	}
+	.reset {
+		position: absolute;
+		scale: .18;
+		top: -52px;
+		left: -47px;
+	}
+}
+.btn1:hover {
+	background-color: #e1e1e1;
+}
+.btn1:not(:first-child)::after {
+	content: '';
+	position: absolute;
+	top: 7px;
+	left: -1px;
+	width: 2px;
+	height: 25px;
+	background: #e1e1e1;
+}
+.btn1:first-child {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.btn1:last-child {
+	border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.btn2 {
+	width: 85px;
+}
+.btn3 {
+	width: 50px;
+	&:hover {
+		.reset {
+			animation: rotate .5s ease-out 1
+		}
+	}
+}
+
+@keyframes rotate {
+	0% {
+	  transform: rotate(0deg);
+	}
+	100% {
+	  transform: rotate(360deg);
+	}
+}
+
+.active {
+	background-color: #00aeff;
+}
+
+.active .faction, .active .class, .active .bust, .active .weapon {
+	filter: invert(0%);
+}
+
+

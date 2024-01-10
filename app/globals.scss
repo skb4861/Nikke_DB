@@ -1,14 +1,30 @@
 html,
 body {
-  min-width: 1200px;
+  max-width: 1200px;
   height: 100%;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   text-align: center;
   font-size: 15px;
   // font-weight: bold;
   background: url(part2.png) 0 0 repeat;
   background-size: cover;
+  opacity: 0;
+  animation: fadeIn ease-in-out 0.5s forwards;
+}
+body::-webkit-scrollbar {
+  width: 8px; 
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 30%; 
+  background: #00aeff;
+  
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(33, 122, 244, .1);
 }
 
 .container {
@@ -19,145 +35,19 @@ body {
     .col {
       flex-grow: 1;
       padding: 15px;
-      table {
-        width: 100%;
-        background: white;
-        border-collapse: collapse;
-        border-radius: 10px;
-        overflow: hidden;
-        margin-top: 10px;
-        thead {
-          background-color: #404142;
-          color: #f6fafd;
-          padding: 20px 60px;
-          border-bottom: 1px solid #9c9494;
-          th {
-            padding: 7px 0;
-          }
-          .thum {
-            width: 150px;
-          }
-          .info-name {
-            padding-left: 40px;
-            width: 130px;
-            text-align: left;
-          }
-        }
-        tbody {
-          position: relative;
-          transition: 0.3s;
-          &.chara-list {
-            &::before {
-              content: "";
-              position: absolute;
-              background-color: rgba(249, 181, 54, 1);
-              top: 0;
-              left: -100%;
-              width: 1212px;
-              height: 111px;
-              // background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(249, 181, 54, 1));
-              transition: left 0.3s ease-in-out;
-            }
-            &:hover::before {
-              left: 0;
-            }
-            &:hover {
-              color: white;
-            }
-            &:hover .icon-faction {
-              filter: invert(0%);
-            }
-            &:hover .icon-class {
-              filter: invert(0%);
-            }
-            &:hover .icon-bust {
-              filter: invert(0%);
-            }
-            &:hover .icon-weapon {
-              filter: invert(0%);
-            }
-          }
-          border-bottom: 1px solid #f1f1f1;
-          line-height: 0px;
-          tr {
-            .data-container {
-              position: relative;
-              z-index: 2; 
-            }
-            .info-rarity {
-              width: 90px;
-            }
-            .info-code {
-              width: 90px;
-            }
-            .info-name {
-              padding-left: 40px;
-              width: 130px;
-              text-align: left;
-            }
-            .info-data {
-              width: 100px;
-            }
-            td {
-              font-size: 17px;
-              padding: 0;
-              position: relative;
-              height: 110px;
-              .image-container {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 130%;
-                height: 100%;
-                .chara-img {
-                  width: 100%;
-                  height: auto;
-                }
-                .faction {
-                  position: absolute;
-                  z-index: 0;
-                  top: 30px;
-                  left: 5px;
-                  width: 140%;
-                  height: auto;
-                  filter: invert(5%)
-                } 
-              }
-              .image-container:not(.faction-hidden) {
-                overflow: hidden;
-              }
-              .icon-class {
-                width: 30%;
-                height: auto;
-                filter: invert(100%);
-                transition: .4s;
-              }
-              .icon-faction {
-                width: 30%;
-                filter: invert(100%);
-                transition: .4s;
-              }
-              .icon-rarity {
-                width: 45%;
-              }
-              .icon-bust {
-                width: 33%;
-                transition: .4s;
-                filter: invert(100%);
-              }
-              .icon-code {
-                scale: .45;
-              }
-              .icon-weapon {
-                width: 60%;
-                filter: invert(100%);
-                transition: .4s;
-              }
-            }
-          }
-        }
-      }
     }
   }
 }
 
+footer {
+  margin-top: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

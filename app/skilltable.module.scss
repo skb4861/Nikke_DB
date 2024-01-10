@@ -1,0 +1,124 @@
+.skill_table {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-left: 20px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	width: 504px;
+	height: 750px;
+	// border: 2px solid #cecece;
+	border-top: none;
+	border-radius: 10px;
+	background-color: #f7f7f7;
+	.skill_thead {
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		height: 30px;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		background-color: #00aeff;
+		border: 2px solid #00aeff;
+		line-height: 30px;
+		color: white;
+	}
+	.weapon_info {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 470px;
+		height: 155px;
+		background-color: white;
+		color: #00aeff;
+		border-radius: 10px;
+		.weapon_name {
+			position: relative;
+			display: block;
+			margin: 8px;
+			font-size: 17px;
+			&::after {
+				content: '';
+				position: absolute;
+				width: 400px;
+				height: 1px;
+				top: 25px;
+				left: 50%;
+				transform: translateX(-50%);
+				background-color: #00aeff;
+			}
+		}
+		.weapon_skill {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: nowrap;
+			color: #666666;
+			line-height: 30px;
+			background-color: #e9e9e9;
+			width: 90%;
+			height: 30px;
+			border-radius: 5px;
+			margin-bottom: 5px;
+			padding-left: 10px;
+			.num {
+				width: 40%;
+				background-color: #939091;
+				border-bottom-right-radius: 5px;
+				border-top-right-radius: 5px;
+				color: white;
+			}
+		}
+	}
+	.skill {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		text-align: left;
+		width: 470px;
+		height: 170px;
+		background-color: white;
+		color: #4a4a4a;
+		border-radius: 10px;
+		.skill_name {
+			font-size: 17px;
+			margin: 10px 10px;
+		}
+		.skill_info {
+			overflow-y: auto;
+			position: absolute;
+			width: 92%;
+			height: 65%;
+			top: 58%;
+			left: 50%;
+			padding: 10px;
+			border-radius: 10px;
+			transform: translate(-50%, -50%);
+			background-color: #e9e9e9;
+		}
+		.skill_info::-webkit-scrollbar {
+			width: 5px; 
+		}
+		.skill_info::-webkit-scrollbar-thumb {
+			height: 30%; 
+			background: #00aeff;
+			border-radius: 10px;
+		}
+		.skill_info::-webkit-scrollbar-track {
+			background: rgba(33, 122, 244, .1);
+			border-radius: 10px;
+		}
+		.cooldown_time {
+			display: flex;
+			width: 100px;
+			height: 30px;
+			line-height: 46px;
+			.cooldown {
+				margin-right: 5px;
+				margin-top: 15px;
+				scale: .9;
+			}
+		}
+	}
+}
