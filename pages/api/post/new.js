@@ -3,7 +3,6 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "../auth/[...nextauth]";
 const { ObjectId } = require('mongodb');
 
-export const dynamic = 'force-dynamic';
 export default async function handler(요청, 응답) {
     let session = await getServerSession(요청, 응답, authOptions)
     
