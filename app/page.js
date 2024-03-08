@@ -44,13 +44,7 @@ export default async function Home() {
     }
   });
 
-  fetch('/api/post/start', {
-    method: 'PATCH',
-    body: JSON.stringify({
-      유저평점: sortDataArray.유저평점
-    }),
-  })
-  .then(console.log(sortDataArray))
+  // console.log(DataArray);
 
   return (
     <main className={do_hyeon.className}>
