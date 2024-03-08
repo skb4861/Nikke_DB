@@ -129,6 +129,8 @@ export default function Characontent({ DataArray }) {
     fetchData();
   }, [DataArray]);
 
+  console.log(DataArray);
+
   return (
     <div>
       <CharaModal
