@@ -127,7 +127,7 @@ export default function Characontent({ DataArray }) {
     };
 
     fetchData();
-  }, []);
+  }, [DataArray]);
 
   return (
     <div>
