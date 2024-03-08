@@ -45,7 +45,7 @@ export default async function Home() {
 
   // console.log(DataArray);
 
-  fetch('/api/start', {
+  fetch('/api/post/start', {
     method: 'PATCH',
     body: JSON.stringify({
       유저평점: DataArray.유저평점
