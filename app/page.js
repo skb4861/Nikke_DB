@@ -6,11 +6,6 @@ import Btnfilter from "./BtnFilter";
 export default async function Home() {
   const db = (await connectDB).db('project1');
   let result = await db.collection('chara-info').find().toArray();
-  const 유저평점 = result.유저평점;
-  await db.collection('chara-info').updateMany(
-    {},
-    { $set: { 유저평점 } }
-  );
 
   const DataArray = result.map(data => ({
     _id: data._id.toString(),
@@ -49,6 +44,13 @@ export default async function Home() {
   });
 
   // console.log(DataArray);
+
+  fetch('/api/start', {
+    method: 'PATCH',
+    body: JSON.stringify({
+      유저평점: DataArray.유저평점
+    }),
+  })
 
   return (
     <main className={do_hyeon.className}>
