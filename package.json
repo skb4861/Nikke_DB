@@ -24,6 +24,7 @@
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.16.0",
     "sass": "^1.65.1",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+    "vercel": "^33.5.4"
   }
 }
