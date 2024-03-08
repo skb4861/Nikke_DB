@@ -13,7 +13,8 @@ body {
   animation: fadeIn ease-in-out 0.5s forwards;
 }
 body::-webkit-scrollbar {
-  width: 8px; 
+  width: 8px;
+  height: 8px; 
 }
 
 body::-webkit-scrollbar-thumb {
