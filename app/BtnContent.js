@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import styles from './btncontent.module.scss'
 
+
 import R from '/public/info/R.png'
 import SR from '/public/info/SR.png'
 import SSR from '/public/info/SSR.png'
@@ -104,7 +105,7 @@ export default function BtnContent({ name, isActive, onClick }) {
 			break;
 		case '리셋':
 			buttonClassName = `${styles.btn1} ${styles.btn3}`;
-			break;	
+			break;
 		default:
 			break;
 	}

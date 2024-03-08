@@ -85,7 +85,7 @@ export default function FormContent({ selectedCharaData, session }) {
     const intScore = scores.map(score => parseInt(score));
     const sum = intScore.reduce((total, score) => total + score, 0);
     const average = sum / intScore.length;
-    return average.toFixed(1); // 소수점 둘째 자리까지 표시하도록 평균값을 반올림합니다.
+    return average.toFixed(1);
   };
 
   const average = calculateAverageScore();
