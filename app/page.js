@@ -7,7 +7,6 @@ export default async function Home() {
   const db = (await connectDB).db('project1');
   let result = await db.collection('chara-info').find().toArray();
 
-
   const DataArray = result.map(data => ({
     _id: data._id.toString(),
     이름: data.이름,
