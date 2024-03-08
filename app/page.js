@@ -45,6 +45,13 @@ export default async function Home() {
 
   // console.log(DataArray);
 
+  fetch('/api/post/start', {
+    method: 'PATCH',
+    body: JSON.stringify({
+      유저평점: DataArray.유저평점
+    }),
+  })
+
   return (
     <main className={do_hyeon.className}>
       <div className="container">
