@@ -5,7 +5,7 @@ const { ObjectId } = require('mongodb');
 
 export default async function handler(요청, 응답) {
     let session = await getServerSession(요청, 응답, authOptions)
-
+    
     if (요청.method == 'POST') {
 
         try {
@@ -26,23 +26,17 @@ export default async function handler(요청, 응답) {
             const allScores = scoreArray.map(score => parseInt(score));
             const sum = allScores.reduce((total, score) => total + score, 0);
             const average = (sum / allScores.length).toFixed(1);
-
+            
             await db.collection('chara-info').updateOne(
                 { _id: new ObjectId(요청.body.charaId) },
                 { $set: { review: reviewArray, 유저평점: average } }
             );
             return 응답.status(200).json({ success: true, message: '리뷰 저장 성공' });
             // return 응답.redirect(302, `/form/${요청.body.charaId}`);
-
+            
         } catch (error) {
             console.error(error);
             return 응답.status(500).json({ success: false, error: '리뷰 저장 실패' });
         }
-    }
-    else {
-        await db.collection('chara-info').updateOne(
-            { _id: new ObjectId(요청.body.charaId) },
-            { $set: { review: reviewArray, 유저평점: average } }
-        );
     }
 }
