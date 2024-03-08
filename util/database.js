@@ -1,5 +1,5 @@
 import { MongoClient } from 'mongodb'
-const MONGODB_URI = 'mongodb+srv://vercel-admin-user:GUMX2UDya2HICLpF@cluster0.euvqotd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const MONGODB_URI = 'mongodb+srv://vercel-admin-user:GUMX2UDya2HICLpF@cluster0.euvqotd.mongodb.net/myFirstDatabase?retryWrites=true'
 const options = { useNewUrlParser: true }
 let connectDB
 
