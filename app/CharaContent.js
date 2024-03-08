@@ -101,7 +101,6 @@ export default function Characontent({ DataArray }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedCharaData, setSelectedCharaData] = useState(null);
-  const [updata, setupData] = useState([]);
 
   const handleMouseEnter = (index) => {
     setHoveredIndex(index);
@@ -120,14 +119,6 @@ export default function Characontent({ DataArray }) {
     setSelectedCharaData(null);
     setModalIsOpen(false);
   };
-
-  useEffect(() => {
-    const fetchData = () => {
-      setupData(DataArray);
-    };
-
-    fetchData();
-  }, [updata]);
 
   return (
     <div>
@@ -152,7 +143,7 @@ export default function Characontent({ DataArray }) {
           </tr>
         </thead>
         <tbody className={styles.chara_list}>
-          {updata.map((data, index) => (
+          {DataArray.map((data, index) => (
             <tr
               key={data._id}
               onMouseEnter={() => handleMouseEnter(index)}
