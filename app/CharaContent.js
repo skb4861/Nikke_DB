@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import styles from "./characontent.module.scss"
 import CharaModal from "./CharaModal";
 import { do_hyeon } from "./font"
@@ -101,6 +101,7 @@ export default function Characontent({ DataArray }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedCharaData, setSelectedCharaData] = useState(null);
+  const [updata, setupData] = useState([]);
 
   const handleMouseEnter = (index) => {
     setHoveredIndex(index);
@@ -119,6 +120,14 @@ export default function Characontent({ DataArray }) {
     setSelectedCharaData(null);
     setModalIsOpen(false);
   };
+
+  useEffect(() => {
+    const fetchData = () => {
+      setupData(DataArray);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div>
@@ -143,7 +152,7 @@ export default function Characontent({ DataArray }) {
           </tr>
         </thead>
         <tbody className={styles.chara_list}>
-          {DataArray.map((data, index) => (
+          {updata.map((data, index) => (
             <tr
               key={data._id}
               onMouseEnter={() => handleMouseEnter(index)}

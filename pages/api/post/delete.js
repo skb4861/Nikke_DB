@@ -48,10 +48,4 @@ export default async function handler(요청, 응답) {
       return 응답.status(500).json({ success: false, error: '리뷰 저장 실패' });
     }
   }
-  else {
-    await db.collection('chara-info').updateOne(
-      { _id: new ObjectId(요청.body.charaId) },
-      { $set: { review: reviewArray, 유저평점: average } }
-  );
-  }
 }
