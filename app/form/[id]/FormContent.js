@@ -243,7 +243,7 @@ export default function FormContent({ selectedCharaData, session }) {
           </div>
         </div>
       </div>
-      <footer>Copyright 2023. SHIFTUP. All rights reserved.</footer>
+      <footer className={do_hyeon.className}>Copyright 2023. SHIFTUP. All rights reserved.</footer>
     </div>
   )
 }
