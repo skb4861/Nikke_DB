@@ -20,7 +20,7 @@ export default async function handler(요청, 응답) {
             .map(score => parseInt(score));
           if (filteredScores.length > 0) {
             const sum = filteredScores.reduce((total, score) => total + score, 0);
-            average = (sum / filteredScores.length).toFixed(1); // 여기서 let을 사용하지 않고 기존의 average 변수를 업데이트합니다.
+            average = (sum / filteredScores.length).toFixed(1);
           }
           else {
             average = "-";

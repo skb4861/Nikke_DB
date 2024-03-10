@@ -32,7 +32,6 @@ export default async function Home() {
     if (rarityComp !== 0) {
       return rarityComp;
     } else {
-      // 레어리티가 같은 경우 기업을 우선순위에 따라 정렬
       const sortFaction = {
         엘리시온: 5,
         미실리스: 4,

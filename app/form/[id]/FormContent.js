@@ -167,7 +167,6 @@ export default function FormContent({ selectedCharaData, session }) {
             }
           })
           .catch(error => {
-            // 네트워크 오류 등에 대한 처리
             console.error('리뷰 저장 오류:', error);
           });
       }
